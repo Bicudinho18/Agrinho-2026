@@ -1,109 +1,290 @@
-@import url('https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:wght@100..900&display=swap');
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E TIPOGRAFIA
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box; /* Garante que paddings não quebrem o tamanho dos elementos */
+}
 
 body {
     margin: 0;
     font-family: "Montserrat", sans-serif;
     padding: 20px;
     background-color: #f4f4f4;
+    overflow-x: hidden; /* Evita barra de rolagem horizontal indesejada */
+    color: #333333;
 }
 
+/* ==========================================================================
+   2. CABEÇALHO (HEADER)
+   ========================================================================== */
 header {
     background-color: #790101;
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
-h1 {
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.2rem;
+}
+
+.subtitulo {
+    font-size: 1.2rem;
+    opacity: 0.9;
     margin: 0;
+}
+
+/* ==========================================================================
+   3. CONTEÚDO PRINCIPAL (LAYOUT E TEXTOS)
+   ========================================================================== */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+section {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 h2 {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #222222;
 }
 
 p {
     text-align: justify;
-    margin: 20px auto;
-    max-width: 1000px;
-    /* margem lateral */
+    line-height: 1.7;
+    font-size: 1.05rem;
+    color: #444444;
+    margin: 20px 0;
 }
 
+/* ==========================================================================
+   4. CONTROLE DAS IMAGENS (CORREÇÃO DO TAMANHO)
+   ========================================================================== */
 .imagem-introducao,
 .imagem2 {
     display: block;
-    margin: 20px auto;
-    max-width: 40%;
-    height: auto;
-    border-radius: 20px 20px 20px 20px;
-}
-#referencias {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
+    margin: 30px auto;
+    width: 100%;          /* Permite que ela seja responsiva */
+    max-width: 550px;     /* TAMANHO MÁXIMO FIXO: Impede que fiquem gigantes na tela grande */
+    height: auto;         /* Mantém a proporção sem distorcer a foto */
+    border-radius: 15px;  /* Cantos arredondados suaves */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra elegante */
 }
 
-#referencias h3,
+/* ==========================================================================
+   5. BOTÕES E INTERAÇÕES
+   ========================================================================== */
+.container-botoes {
+    text-align: center;
+    margin: 25px 0 10px 0;
+}
+
+.btn-agro-verde, 
+.btn-agro-terra {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 50px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-agro-verde {
+    background-color: #2e6f40;
+    color: white;
+}
+
+.btn-agro-verde:hover {
+    background-color: #1e4620;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-agro-terra {
+    background-color: #8c7853;
+    color: white;
+}
+
+.btn-agro-terra:hover {
+    background-color: #6e5d3f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Botão Flutuante de Contraste */
+.btn-contraste {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 10px 18px;
+    background-color: #222222;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
+
+.btn-contraste:hover {
+    transform: scale(1.05);
+    background-color: #000000;
+}
+
+/* ==========================================================================
+   6. REFERÊNCIAS E RODAPÉ
+   ========================================================================== */
+#referencias {
+    background-color: #eef2ee;
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 5px solid #2e6f40;
+}
+
+#referencias h3 {
+    margin-top: 0;
+    color: #222222;
+}
+
 #referencias p {
-    padding-left: 0; /* remove qualquer recuo lateral */
+    font-size: 0.95rem;
+    margin: 10px 0;
+    text-align: left;
 }
 
 footer {
-    width: 100%;
     background-color: #373a37;
     color: white;
     text-align: center;
-    padding: 20px 0;
-    font-size: 12px;
+    padding: 25px 10px;
+    font-size: 13px;
+    margin-top: 40px;
+    border-radius: 8px 8px 0 0;
 }
 
 footer p {
-    margin: 0;             /* remove margem automática que pode estar deslocando */
-    display: inline-block; /* garante que o texto se comporte como um bloco centralizável */
+    margin: 0;
+    color: #dddddd;
+    display: inline-block;
 }
 
-@media (max-width: 600px) {
+/* ==========================================================================
+   7. CLASSES DO JAVASCRIPT (ANIMAÇÕES)
+   ========================================================================== */
+.elemento-escondido {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.elemento-visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   8. RESPONSIVIDADE (TELAS MENORES / CELULARES)
+   ========================================================================== */
+@media (max-width: 768px) {
     body {
         padding: 10px;
     }
 
-    h1 {
-        font-size: 1.5rem;
+    header {
+        padding: 30px 15px;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    .subtitulo {
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 25px 20px;
     }
 
     h2 {
-        font-size: 1.2rem;
-    }
-
-    .imagem-introducao,
-    .infografico {
-        max-width: 90%;
+        font-size: 1.3rem;
     }
 
     p {
-        font-size: 14px;
-        padding: 0 10px;
+        font-size: 0.95rem;
     }
 
-    footer {
-        font-size: 10px;
+    .imagem-introducao,
+    .imagem2 {
+        max-width: 100%; /* No celular, ela ocupa o espaço disponível com segurança */
+        margin: 20px 0;
+    }
+
+    .btn-contraste {
+        position: static; /* No celular, o botão sai de cima do texto e fica no topo */
+        display: block;
+        margin: 0 auto 15px auto;
+        text-align: center;
+        width: fit-content;
     }
 }
 
-/* Tablets (601px até 1024px) */
-@media (min-width: 601px) and (max-width: 1024px) {
+/* ==========================================================================
+   9. MODO ALTO CONTRASTE (JS)
+   ========================================================================== */
+body.alto-contraste {
+    background-color: #121212 !important;
+    color: #ffffff !important;
+}
 
-    .imagem-introducao,
-    .infografico {
-        max-width: 60%;
-    }
+body.alto-contraste section {
+    background-color: #1a1a1a !important;
+    border: 1px solid #ffffff;
+}
 
-    p {
-        font-size: 16px;
-    }
+body.alto-contraste header,
+body.alto-contraste footer {
+    background-color: #000000 !important;
+    border: 1px solid #ffffff;
+}
 
-    h1 {
-        font-size: 2rem;
-    }
+body.alto-contraste h2, 
+body.alto-contraste h3,
+body.alto-contraste p,
+body.alto-contraste .subtitulo {
+    color: #ffffff !important;
+}
+
+body.alto-contraste #referencias {
+    background-color: #262626 !important;
+    border-left: 5px solid #ffffff;
+}
+
+body.alto-contraste .btn-agro-verde,
+body.alto-contraste .btn-agro-terra {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #000000;
 }
