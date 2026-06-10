@@ -5,7 +5,6 @@
   
 - CSS
 
-# Links:
-https://agrinho-2025-gamma-three.vercel.app/
+- JS
 
-https://bicudinho18.github.io/Agrinho-2025/
+
