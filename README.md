@@ -1,7 +1,5 @@
-# Projeto Agrinho 2025
-# Sobre:
-Site abordando o tema "Tecnologia no campo: Avanços e Influência".
-
+# Projeto Agrinho 2026
+# Agro Forte, Futuro Sustentável
 # Recursos utilizados:
 - HTML
   
